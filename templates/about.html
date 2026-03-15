@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}About - Portfolio{% endblock %}
+
+{% block content %}
+    <section style="padding-top: 8rem;">
+        <div class="container" style="max-width: 800px;">
+            <h2>About Me</h2>
+            <div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem;">
+                    I'm {{ data.name }}, a passionate creative developer and designer with a love for building beautiful, 
+                    functional digital experiences. With expertise in both design and development, I bridge the gap 
+                    between aesthetics and functionality.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem;">
+                    My journey in the digital space has been shaped by a deep commitment to understanding user needs 
+                    and translating them into intuitive, visually stunning interfaces. Whether it's crafting a brand 
+                    identity, designing user experiences, or building interactive web applications, I bring the same 
+                    level of attention to detail and creativity to every project.
+                </p>
+
+                <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--primary);">What I Do</h3>
+                <ul style="list-style: none; margin-bottom: 2rem;">
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                        <span style="color: var(--secondary); font-weight: bold; margin-right: 1rem;">✓</span>
+                        Web Design & Development
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                        <span style="color: var(--secondary); font-weight: bold; margin-right: 1rem;">✓</span>
+                        UI/UX Design
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                        <span style="color: var(--secondary); font-weight: bold; margin-right: 1rem;">✓</span>
+                        Branding & Identity
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                        <span style="color: var(--secondary); font-weight: bold; margin-right: 1rem;">✓</span>
+                        Motion Graphics & Animation
+                    </li>
+                </ul>
+
+                <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--primary);">My Skills</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                    {% for skill in data.skills %}
+                    <span style="background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; 
+                                  padding: 0.75rem 1rem; border-radius: 6px; text-align: center; font-weight: 500;">
+                        {{ skill }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
